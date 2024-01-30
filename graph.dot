@@ -1,0 +1,20 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "data.aws_ami.datascientest-ami" [label="data.aws_ami.datascientest-ami"];
+  "aws_ebs_volume.datascientest-ebs" [label="aws_ebs_volume.datascientest-ebs"];
+  "aws_instance.datascientest-instance" [label="aws_instance.datascientest-instance"];
+  "aws_network_interface.interface_reseau_instance" [label="aws_network_interface.interface_reseau_instance"];
+  "aws_network_interface_sg_attachment.datascientest_sg_attachment" [label="aws_network_interface_sg_attachment.datascientest_sg_attachment"];
+  "aws_security_group.datascientest-sg" [label="aws_security_group.datascientest-sg"];
+  "aws_subnet.datascientest_subnet" [label="aws_subnet.datascientest_subnet"];
+  "aws_volume_attachment.datascientest_ebs_att" [label="aws_volume_attachment.datascientest_ebs_att"];
+  "aws_vpc.datascientest_vpc" [label="aws_vpc.datascientest_vpc"];
+  "aws_instance.datascientest-instance" -> "aws_network_interface.interface_reseau_instance";
+  "aws_network_interface.interface_reseau_instance" -> "aws_subnet.datascientest_subnet";
+  "aws_network_interface_sg_attachment.datascientest_sg_attachment" -> "aws_instance.datascientest-instance";
+  "aws_subnet.datascientest_subnet" -> "aws_vpc.datascientest_vpc";
+  "aws_volume_attachment.datascientest_ebs_att" -> "aws_ebs_volume.datascientest-ebs";
+  "aws_volume_attachment.datascientest_ebs_att" -> "aws_instance.datascientest-instance";
+  "aws_vpc.datascientest_vpc" -> "aws_security_group.datascientest-sg";
+}
