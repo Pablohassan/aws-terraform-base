@@ -17,6 +17,5 @@ terraform {
 # la région aws ou nous voulons déployer nos différentes ressources
 provider "aws" {
   region     = "eu-west-3"
-  access_key = "AKIAW4YWYD4TU6WBYQ6T"                     # la clé d’accès crée pour l'utilisateur qui sera utilisé par terraform
-  secret_key = "1agqU7d4DYADBvOXYqGy952MpLqFopdHcME4wXNN" # la clé sécrète crée pour l'utilisateur qui sera utilisé par terraform
+
 }
